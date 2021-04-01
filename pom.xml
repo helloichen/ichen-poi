@@ -25,6 +25,13 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+    <scm>
+        <tag>master</tag>
+        <url>git@github.com:helloichen/ichen-poi.git</url>
+        <connection>scm:git:git@github.com:helloichen/ichen-poi.git</connection>
+        <developerConnection>scm:git:git@github.com:helloichen/ichen-poi.git</developerConnection>
+    </scm>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

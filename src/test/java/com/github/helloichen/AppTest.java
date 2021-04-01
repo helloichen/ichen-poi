@@ -1,4 +1,4 @@
-package com.githup.helloichen;
+package com.github.helloichen;
 
 import org.junit.Test;
 

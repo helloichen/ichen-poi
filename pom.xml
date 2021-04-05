@@ -6,7 +6,7 @@
 
     <groupId>com.github.helloichen</groupId>
     <artifactId>ichen-poi</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
 
     <name>ichen-poi</name>
     <packaging>jar</packaging>
@@ -49,8 +49,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <poi.version>3.17</poi.version>
-        <fastjson.version>1.2.60</fastjson.version>
     </properties>
 
     <dependencies>
@@ -68,7 +66,7 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>${poi.version}</version>
+            <version>3.17</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
@@ -78,7 +76,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
+            <version>1.2.60</version>
         </dependency>
     </dependencies>
 

@@ -26,7 +26,7 @@ public @interface IChenExcelField {
     boolean exportField() default true;
 
     /**
-     * todo 导出时字段顺寻 待开发。。。
+     * todo 导出时字段顺序 待开发。。。
      */
     int order() default 0;
 }

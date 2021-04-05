@@ -13,11 +13,6 @@
     <description>demo maven repo</description>
     <url>https://github.com/helloichen/ichen-poi.git</url>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
 
     <licenses>
         <license>
@@ -37,37 +32,64 @@
             <email>helloichen@163.com</email>
         </developer>
     </developers>
-
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
     <distributionManagement>
         <snapshotRepository>
-            <id>ossrh</id>
+            <id>snapshots</id>
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>ossrh</id>
+            <id>releases</id>
             <name>Nexus Release Repository</name>
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
 
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <poi.version>3.17</poi.version>
+        <fastjson.version>1.2.60</fastjson.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.14</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>9.0.39</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+    </dependencies>
+
+
     <build>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
-                <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.1.0</version>
                 </plugin>
-                <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>3.0.2</version>
@@ -92,7 +114,6 @@
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>2.8.2</version>
                 </plugin>
-                <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
                 <plugin>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>3.7.1</version>
@@ -101,18 +122,6 @@
                     <artifactId>maven-project-info-reports-plugin</artifactId>
                     <version>3.0.0</version>
                 </plugin>
-
-<!--                <plugin>-->
-<!--                    <groupId>org.sonatype.plugins</groupId>-->
-<!--                    <artifactId>nexus-staging-maven-plugin</artifactId>-->
-<!--                    <version>1.6.8</version>-->
-<!--                    <extensions>true</extensions>-->
-<!--                    <configuration>-->
-<!--                        <serverId>snapshots</serverId>-->
-<!--                        <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>-->
-<!--                        <autoReleaseAfterClose>false</autoReleaseAfterClose>-->
-<!--                    </configuration>-->
-<!--                </plugin>-->
             </plugins>
         </pluginManagement>
         <plugins>
@@ -139,9 +148,12 @@
                     <!-- 忽略生成文档中的错误 -->
                     <additionalparam>-Xdoclint:none</additionalparam>
                     <aggregate>true</aggregate>
-                    <charset>UTF-8</charset><!-- utf-8读取文件 -->
-                    <encoding>UTF-8</encoding><!-- utf-8进行编码代码 -->
-                    <docencoding>UTF-8</docencoding><!-- utf-8进行编码文档 -->
+                    <!-- utf-8读取文件 -->
+                    <charset>UTF-8</charset>
+                    <!-- utf-8进行编码代码 -->
+                    <encoding>UTF-8</encoding>
+                    <!-- utf-8进行编码文档 -->
+                    <docencoding>UTF-8</docencoding>
                 </configuration>
                 <executions>
                     <execution>

@@ -6,11 +6,11 @@
 
     <groupId>com.github.helloichen</groupId>
     <artifactId>ichen-poi</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 
     <name>ichen-poi</name>
     <packaging>jar</packaging>
-    <description>demo maven repo</description>
+    <description>ichen poi mvn repo</description>
     <url>https://github.com/helloichen/ichen-poi.git</url>
 
 

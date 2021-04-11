@@ -23,8 +23,8 @@
     </licenses>
     <scm>
         <url>https://github.com/helloichen/ichen-poi.git</url>
-        <connection>scm:git:https://github.com/helloichen/ichen-poi.git</connection>
-        <developerConnection>scm:git:https://github.com/helloichen/ichen-poi.git</developerConnection>
+        <connection>scm:git:${project.url}</connection>
+        <developerConnection>scm:git:${project.url}</developerConnection>
     </scm>
     <developers>
         <developer>
